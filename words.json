@@ -1,31 +1,14 @@
 [
   {
-    "soni": "myšák",
-    "czech": "někdo je mišuge"
+    "soni": "mysak",
+    "czech": "nekdo je misuge"
   },
   {
-    "soni": "přesně tak nějak",
-    "czech": "nevím",
-    "example": "No tak přesně tak nějak to bylo s tím projektem."
-  },
-  {
-    "soni": "ono to nějak bude",
-    "czech": "nemám plán",
-    "example": "Termín je zítra? Ono to nějak bude."
-  },
-  {
-    "soni": "vlastně jo ale ne",
-    "czech": "ne",
-    "example": "Schválíš tu objednávku? Vlastně jo ale ne."
-  },
-  {
-    "soni": "já jsem to říkala",
-    "czech": "neříkala",
-    "example": "Já jsem to říkala na meetingu!"
+    "soni": "presne tak nejak",
+    "czech": "nevim"
   },
   {
     "soni": "hned",
-    "czech": "za hodinu až týden",
-    "example": "Pošlu to hned."
+    "czech": "za hodinu az tyden"
   }
 ]
