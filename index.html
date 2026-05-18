@@ -17,32 +17,20 @@
       --highlight: #f9e4b7;
       --stamp: #c0392b;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background-color: var(--bg);
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.12) 28px),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.12) 28px);
       font-family: 'Courier Prime', monospace;
       color: var(--ink);
       min-height: 100vh;
       padding: 40px 20px 80px;
     }
-
-    header {
-      max-width: 760px;
-      margin: 0 auto 48px;
-      text-align: center;
-      position: relative;
-    }
-
+    header { max-width: 760px; margin: 0 auto 48px; text-align: center; }
     .stamp {
       display: inline-block;
       border: 3px solid var(--stamp);
       color: var(--stamp);
-      font-family: 'Courier Prime', monospace;
       font-weight: 700;
       font-size: 11px;
       letter-spacing: 3px;
@@ -52,429 +40,110 @@
       margin-bottom: 20px;
       opacity: 0.85;
     }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 6vw, 4.8rem);
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-
-    h1 span {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .subtitle {
-      font-size: 13px;
-      color: var(--muted);
-      letter-spacing: 1px;
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    .divider {
-      border: none;
-      border-top: 2px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
-      height: 4px;
-      margin: 24px 0;
-    }
-
-    /* Search */
-    .search-wrap {
-      max-width: 760px;
-      margin: 0 auto 40px;
-      position: relative;
-    }
-
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 700; line-height: 1; letter-spacing: -1px; margin-bottom: 8px; }
+    h1 span { font-style: italic; color: var(--accent); }
+    .subtitle { font-size: 13px; color: var(--muted); letter-spacing: 1px; margin-top: 10px; font-style: italic; }
+    .divider { border: none; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); height: 4px; margin: 24px 0; }
+    .search-wrap { max-width: 760px; margin: 0 auto 40px; position: relative; }
     .search-wrap input {
-      width: 100%;
-      background: var(--paper);
-      border: 2px solid var(--ink);
-      font-family: 'Courier Prime', monospace;
-      font-size: 18px;
-      padding: 14px 50px 14px 20px;
-      outline: none;
-      color: var(--ink);
-      box-shadow: 4px 4px 0 var(--ink);
-      transition: box-shadow 0.15s;
+      width: 100%; background: var(--paper); border: 2px solid var(--ink);
+      font-family: 'Courier Prime', monospace; font-size: 18px;
+      padding: 14px 50px 14px 20px; outline: none; color: var(--ink);
+      box-shadow: 4px 4px 0 var(--ink); transition: box-shadow 0.15s;
     }
-
-    .search-wrap input:focus {
-      box-shadow: 6px 6px 0 var(--accent);
-    }
-
+    .search-wrap input:focus { box-shadow: 6px 6px 0 var(--accent); }
     .search-wrap input::placeholder { color: var(--border); }
-
-    .search-icon {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      pointer-events: none;
-    }
-
-    /* Add new word */
-    .add-section {
-      max-width: 760px;
-      margin: 0 auto 48px;
-      background: var(--paper);
-      border: 2px solid var(--ink);
-      box-shadow: 5px 5px 0 var(--ink);
-      padding: 24px 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .add-section::before {
-      content: 'NOVÝ ZÁZNAM';
-      position: absolute;
-      top: 10px;
-      right: -28px;
-      background: var(--accent2);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      padding: 4px 40px;
-      transform: rotate(90deg);
-      transform-origin: center;
-    }
-
-    .add-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .fields {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    @media (max-width: 500px) {
-      .fields { grid-template-columns: 1fr; }
-    }
-
-    .field-group { display: flex; flex-direction: column; gap: 5px; }
-
-    .field-group label {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .field-group input, .field-group textarea {
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      font-family: 'Courier Prime', monospace;
-      font-size: 15px;
-      padding: 8px 12px;
-      color: var(--ink);
-      outline: none;
-      resize: none;
-      transition: border-color 0.15s;
-    }
-
-    .field-group input:focus,
-    .field-group textarea:focus {
-      border-color: var(--ink);
-    }
-
-    .example-field {
-      grid-column: 1 / -1;
-    }
-
-    .btn {
-      background: var(--ink);
-      color: var(--bg);
-      border: none;
-      font-family: 'Courier Prime', monospace;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 11px 28px;
-      cursor: pointer;
-      box-shadow: 3px 3px 0 var(--accent);
-      transition: transform 0.1s, box-shadow 0.1s;
-    }
-
-    .btn:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--accent); }
-    .btn:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 var(--accent); }
-
-    /* Dictionary entries */
-    .dictionary {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
+    .search-icon { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 20px; pointer-events: none; }
+    .dictionary { max-width: 760px; margin: 0 auto; }
     .letter-section { margin-bottom: 36px; }
-
-    .letter-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 4px;
-      margin-bottom: 16px;
-    }
-
-    .entry {
-      background: var(--paper);
-      border-left: 4px solid var(--ink);
-      padding: 16px 20px 16px 18px;
-      margin-bottom: 12px;
-      position: relative;
-      animation: slideIn 0.3s ease;
-      transition: border-color 0.2s;
-    }
-
+    .letter-heading { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1; border-bottom: 2px solid var(--border); padding-bottom: 4px; margin-bottom: 16px; }
+    .entry { background: var(--paper); border-left: 4px solid var(--ink); padding: 16px 20px 16px 18px; margin-bottom: 12px; animation: slideIn 0.3s ease; transition: border-color 0.2s; }
     .entry:hover { border-color: var(--accent); }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-8px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-
-    .entry-header {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .soni-word {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      font-style: italic;
-    }
-
-    .arrow {
-      color: var(--muted);
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .czech-word {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--accent2);
-      text-transform: uppercase;
-    }
-
-    .entry-example {
-      margin-top: 7px;
-      font-size: 13px;
-      color: var(--muted);
-      font-style: italic;
-    }
-
+    @keyframes slideIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+    .entry-header { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .soni-word { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; font-style: italic; }
+    .arrow { color: var(--muted); font-size: 14px; flex-shrink: 0; }
+    .czech-word { font-size: 1rem; font-weight: 700; letter-spacing: 0.5px; color: var(--accent2); text-transform: uppercase; }
+    .entry-example { margin-top: 7px; font-size: 13px; color: var(--muted); font-style: italic; }
     .entry-example::before { content: '"'; }
-    .entry-example::after { content: '"'; }
-
-    .delete-btn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 13px;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.15s, background 0.15s;
-    }
-
-    .entry:hover .delete-btn { opacity: 1; }
-    .delete-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-    .empty-msg {
-      text-align: center;
-      color: var(--muted);
-      font-style: italic;
-      padding: 48px 0;
-      font-size: 15px;
-    }
-
-    .count-badge {
-      display: inline-block;
-      background: var(--highlight);
-      border: 1px solid var(--border);
-      font-size: 11px;
-      padding: 2px 8px;
-      margin-left: 8px;
-      vertical-align: middle;
-      color: var(--muted);
-      font-family: 'Courier Prime', monospace;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 11px;
-      color: var(--border);
-      letter-spacing: 1px;
-    }
+    .entry-example::after  { content: '"'; }
+    .count-badge { display: inline-block; background: var(--highlight); border: 1px solid var(--border); font-size: 11px; padding: 2px 8px; margin-left: 8px; vertical-align: middle; color: var(--muted); }
+    .empty-msg { text-align: center; color: var(--muted); font-style: italic; padding: 48px 0; font-size: 15px; }
+    .loading { text-align: center; color: var(--muted); font-style: italic; padding: 48px 0; font-size: 14px; letter-spacing: 1px; }
+    .error-msg { max-width: 760px; margin: 0 auto; background: #fff0f0; border: 2px solid var(--accent); padding: 16px 20px; font-size: 13px; color: var(--accent); }
+    .error-msg code { background: #ffe0e0; padding: 2px 6px; }
+    footer { text-align: center; margin-top: 60px; font-size: 11px; color: var(--border); letter-spacing: 1px; }
   </style>
 </head>
 <body>
-
 <header>
   <div class="stamp">Interní dokument · Přísně tajné</div>
   <h1>Sonin<br><span>Slovník™</span></h1>
   <p class="subtitle">Oficiální překladový manuál · 1. vydání</p>
   <hr class="divider" />
-  <p style="font-size:13px; color:var(--muted); font-style:italic;">
-    Komplexní průvodce pro překlad z&nbsp;<em>Soniných slovíček</em> do srozumitelné češtiny.
-  </p>
+  <p style="font-size:13px; color:var(--muted); font-style:italic;">Komplexní průvodce pro překlad z&nbsp;<em>Soniných slovíček</em> do srozumitelné češtiny.</p>
 </header>
 
-<!-- Search -->
 <div class="search-wrap">
   <input type="text" id="searchInput" placeholder="Hledej Sonino slovíčko…" oninput="renderDictionary()" />
   <span class="search-icon">🔍</span>
 </div>
 
-<!-- Add new entry -->
-<div class="add-section">
-  <h2>Přidat nový výraz do slovníku</h2>
-  <div class="fields">
-    <div class="field-group">
-      <label>Sonino slovíčko</label>
-      <input type="text" id="soniWord" placeholder="jak to řekla Soňa…" />
-    </div>
-    <div class="field-group">
-      <label>České slovíčko</label>
-      <input type="text" id="czechWord" placeholder="co tím myslela…" />
-    </div>
-    <div class="field-group example-field">
-      <label>Příklad použití (nepovinné)</label>
-      <textarea id="exampleUsage" rows="2" placeholder="Věta, ve které zaznělo…"></textarea>
-    </div>
-  </div>
-  <button class="btn" onclick="addEntry()">+ Zapsat do slovníku</button>
+<div class="dictionary" id="dictionaryContainer">
+  <p class="loading">Načítám slovník…</p>
 </div>
-
-<!-- Dictionary -->
-<div class="dictionary" id="dictionaryContainer"></div>
 
 <footer>Sonin Slovník™ · Interní vydání · Všechna práva (nepochopena) vyhrazena</footer>
 
 <script>
-  const STORAGE_KEY = 'sonin-slovnik-v1';
+  let entries = [];
 
-  const defaultEntries = [
-    { id: 1, soni: "přesně tak nějak", czech: "nevím", example: "No tak přesně tak nějak to bylo s tím projektem." },
-    { id: 2, soni: "ono to nějak bude", czech: "nemám plán", example: "Termín je zítra? Ono to nějak bude." },
-    { id: 3, soni: "vlastně jo ale ne", czech: "ne", example: "Schválíš tu objednávku? Vlastně jo ale ne." },
-    { id: 4, soni: "já jsem to říkala", czech: "neříkala", example: "Já jsem to říkala na meetingu!" },
-    { id: 5, soni: "hned", czech: "za hodinu až týden", example: "Pošlu to hned." },
-  ];
-
-  function loadEntries() {
+  async function loadWords() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : defaultEntries;
-    } catch { return defaultEntries; }
-  }
-
-  function saveEntries(entries) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
-  }
-
-  let entries = loadEntries();
-
-  function addEntry() {
-    const soni = document.getElementById('soniWord').value.trim();
-    const czech = document.getElementById('czechWord').value.trim();
-    const example = document.getElementById('exampleUsage').value.trim();
-
-    if (!soni || !czech) {
-      const btn = document.querySelector('.btn');
-      btn.textContent = '⚠ Vyplň obě pole!';
-      setTimeout(() => btn.textContent = '+ Zapsat do slovníku', 1800);
-      return;
+      const res = await fetch('words.json');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      entries = await res.json();
+      renderDictionary();
+    } catch (err) {
+      document.getElementById('dictionaryContainer').innerHTML =
+        '<div class="error-msg"><strong>Nepodařilo se načíst slovník.</strong><br><br>' +
+        'Ujisti se, že soubor <code>words.json</code> je ve stejné složce jako tato stránka.<br>' +
+        '<small style="opacity:0.7;margin-top:6px;display:block;">Chyba: ' + err.message + '</small></div>';
     }
-
-    entries.push({ id: Date.now(), soni, czech, example });
-    saveEntries(entries);
-
-    document.getElementById('soniWord').value = '';
-    document.getElementById('czechWord').value = '';
-    document.getElementById('exampleUsage').value = '';
-
-    renderDictionary();
-  }
-
-  function deleteEntry(id) {
-    entries = entries.filter(e => e.id !== id);
-    saveEntries(entries);
-    renderDictionary();
   }
 
   function renderDictionary() {
     const query = document.getElementById('searchInput').value.toLowerCase().trim();
     const container = document.getElementById('dictionaryContainer');
-
     let filtered = entries.filter(e =>
       e.soni.toLowerCase().includes(query) ||
       e.czech.toLowerCase().includes(query) ||
       (e.example && e.example.toLowerCase().includes(query))
     );
-
     if (filtered.length === 0) {
-      container.innerHTML = `<p class="empty-msg">Žádný výraz nenalezen.<br>Možná ho Soňa ještě nepoužila — nebo nikdo nepochopil, že to byl výraz.</p>`;
+      container.innerHTML = '<p class="empty-msg">Žádný výraz nenalezen.<br>Možná ho Soňa ještě nepoužila — nebo nikdo nepochopil, že to byl výraz.</p>';
       return;
     }
-
-    // Group by first letter of soni word
     const groups = {};
-    filtered
-      .sort((a, b) => a.soni.localeCompare(b.soni, 'cs'))
-      .forEach(e => {
-        const letter = e.soni[0].toUpperCase();
-        if (!groups[letter]) groups[letter] = [];
-        groups[letter].push(e);
-      });
-
+    filtered.sort((a, b) => a.soni.localeCompare(b.soni, 'cs')).forEach(e => {
+      const letter = e.soni[0].toUpperCase();
+      if (!groups[letter]) groups[letter] = [];
+      groups[letter].push(e);
+    });
     let html = '';
-    for (const letter of Object.keys(groups).sort((a,b) => a.localeCompare(b,'cs'))) {
-      html += `<div class="letter-section">
-        <div class="letter-heading">${letter} <span class="count-badge">${groups[letter].length}</span></div>`;
+    for (const letter of Object.keys(groups).sort((a, b) => a.localeCompare(b, 'cs'))) {
+      html += '<div class="letter-section"><div class="letter-heading">' + letter +
+        ' <span class="count-badge">' + groups[letter].length + '</span></div>';
       for (const e of groups[letter]) {
-        html += `
-        <div class="entry" id="entry-${e.id}">
-          <button class="delete-btn" onclick="deleteEntry(${e.id})" title="Smazat">✕</button>
-          <div class="entry-header">
-            <span class="soni-word">${escHtml(e.soni)}</span>
-            <span class="arrow">→</span>
-            <span class="czech-word">${escHtml(e.czech)}</span>
-          </div>
-          ${e.example ? `<div class="entry-example">${escHtml(e.example)}</div>` : ''}
-        </div>`;
+        html += '<div class="entry"><div class="entry-header">' +
+          '<span class="soni-word">' + escHtml(e.soni) + '</span>' +
+          '<span class="arrow">→</span>' +
+          '<span class="czech-word">' + escHtml(e.czech) + '</span></div>' +
+          (e.example ? '<div class="entry-example">' + escHtml(e.example) + '</div>' : '') +
+          '</div>';
       }
-      html += `</div>`;
+      html += '</div>';
     }
-
     container.innerHTML = html;
   }
 
@@ -482,14 +151,7 @@
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  // Allow Enter key in inputs
-  ['soniWord','czechWord'].forEach(id => {
-    document.getElementById(id).addEventListener('keydown', e => {
-      if (e.key === 'Enter') addEntry();
-    });
-  });
-
-  renderDictionary();
+  loadWords();
 </script>
 </body>
 </html>
